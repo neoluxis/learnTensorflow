@@ -1,0 +1,7 @@
+Found 391 files belonging to 12 classes.
+25/25 [==============================] - 6s 232ms/step - loss: 0.0818 - accuracy: 0.9770
+Mobilenet test accuracy : 0.9769821166992188
+Found 841 files belonging to 12 classes.
+Found 391 files belonging to 12 classes.
+25/25 [==============================] - 1s 60ms/step - loss: 2.0248 - accuracy: 0.4808
+CNN test accuracy : 0.48081842064857483
