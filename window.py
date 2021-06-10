@@ -81,7 +81,7 @@ class MainWindow(QTabWidget):
         about_img = QLabel()
         about_img.setPixmap(QPixmap('images/bj.jpg'))
         about_img.setAlignment(Qt.AlignCenter)
-        label_super = QLabel("作者：XXX\n指导老师：XXX")  # todo 更换作者信息
+        label_super = QLabel("作者：dejahu")  # todo 更换作者信息
         label_super.setFont(QFont('楷体', 12))
         # label_super.setOpenExternalLinks(True)
         label_super.setAlignment(Qt.AlignRight)
