@@ -1,3 +1,11 @@
+# -*- coding: utf-8 -*-
+# @Time    : 2021/6/17 20:29
+# @Author  : dejahu
+# @Email   : 1148392984@qq.com
+# @File    : window.py
+# @Software: PyCharm
+# @Brief   : 图形化界面
+
 import tensorflow as tf
 from PyQt5.QtGui import *
 from PyQt5.QtCore import *
@@ -14,11 +22,11 @@ class MainWindow(QTabWidget):
     def __init__(self):
         super().__init__()
         self.setWindowIcon(QIcon('images/logo.png'))
-        self.setWindowTitle('果蔬识别系统')
+        self.setWindowTitle('果蔬识别系统')  # todo 修改系统名称
         # 模型初始化
-        self.model = tf.keras.models.load_model("models/mobilenet_fv.h5")
-        self.to_predict_name = "images/tim9.jpeg"
-        self.class_names = ['土豆', '圣女果', '大白菜', '大葱', '梨', '胡萝卜', '芒果', '苹果', '西红柿', '韭菜', '香蕉', '黄瓜']
+        self.model = tf.keras.models.load_model("models/mobilenet_fv.h5")  # todo 修改模型名称
+        self.to_predict_name = "images/tim9.jpeg"  # todo 修改初始图片，这个图片要放在images目录下
+        self.class_names = ['土豆', '圣女果', '大白菜', '大葱', '梨', '胡萝卜', '芒果', '苹果', '西红柿', '韭菜', '香蕉', '黄瓜']  # todo 修改类名，这个数组在模型训练的开始会输出
         self.resize(900, 700)
         self.initUI()
 
@@ -75,7 +83,7 @@ class MainWindow(QTabWidget):
         # 关于页面，设置组件并把组件放在布局上
         about_widget = QWidget()
         about_layout = QVBoxLayout()
-        about_title = QLabel('欢迎使用果蔬识别系统')
+        about_title = QLabel('欢迎使用果蔬识别系统')  # todo 修改欢迎词语
         about_title.setFont(QFont('楷体', 18))
         about_title.setAlignment(Qt.AlignCenter)
         about_img = QLabel()
@@ -127,6 +135,19 @@ class MainWindow(QTabWidget):
         result_index = int(np.argmax(outputs))
         result = self.class_names[result_index]  # 获得对应的水果名称
         self.result.setText(result)  # 在界面上做显示
+
+    # 界面关闭事件，询问用户是否关闭
+    def closeEvent(self, event):
+        reply = QMessageBox.question(self,
+                                     '退出',
+                                     "是否要退出程序？",
+                                     QMessageBox.Yes | QMessageBox.No,
+                                     QMessageBox.No)
+        if reply == QMessageBox.Yes:
+            self.close()
+            event.accept()
+        else:
+            event.ignore()
 
 
 if __name__ == "__main__":

@@ -1,3 +1,11 @@
+# -*- coding: utf-8 -*-
+# @Time    : 2021/6/17 20:29
+# @Author  : dejahu
+# @Email   : 1148392984@qq.com
+# @File    : test_model.py
+# @Software: PyCharm
+# @Brief   : 模型测试代码，测试会生成热力图，热力图会保存在results目录下
+
 import tensorflow as tf
 import matplotlib.pyplot as plt
 import numpy as np
@@ -28,10 +36,10 @@ def data_load(data_dir, test_data_dir, img_height, img_width, batch_size):
 
 # 测试mobilenet准确率
 def test_mobilenet():
-    # 加载数据
+    # todo 加载数据, 修改为你自己的数据集的路径
     train_ds, test_ds, class_names = data_load("../data/vegetable_fruit/image_data",
                                               "../data/vegetable_fruit/test_image_data", 224, 224, 16)
-    # 加载模型
+    # todo 加载模型，修改为你的模型名称
     model = tf.keras.models.load_model("models/mobilenet_fv.h5")
     # model.summary()
     # 测试
@@ -78,10 +86,10 @@ def test_mobilenet():
 
 # 测试cnn模型准确率
 def test_cnn():
-    # 加载数据集
+    # todo 加载数据, 修改为你自己的数据集的路径
     train_ds, test_ds, class_names = data_load("../data/vegetable_fruit/image_data",
                                               "../data/vegetable_fruit/test_image_data", 224, 224, 16)
-    # 加载模型
+    # todo 加载模型，修改为你的模型名称
     model = tf.keras.models.load_model("models/cnn_fv.h5")
     # model.summary()
     # 测试

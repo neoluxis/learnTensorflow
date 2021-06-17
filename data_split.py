@@ -1,3 +1,10 @@
+# -*- coding: utf-8 -*-
+# @Time    : 2021/6/17 20:29
+# @Author  : dejahu
+# @Email   : 1148392984@qq.com
+# @File    : data_split.py
+# @Software: PyCharm
+# @Brief   : 将数据集划分为训练集、验证集和测试集
 import os
 import random
 from shutil import copy2
@@ -75,6 +82,6 @@ def data_set_split(src_data_folder, target_data_folder, train_scale=0.8, val_sca
 
 
 if __name__ == '__main__':
-    src_data_folder = "../../data/src_data"
-    target_data_folder = "../../data/split_data"
+    src_data_folder = "../../data/src_data"   # todo 修改你的原始数据集路径
+    target_data_folder = "../../data/split_data"  # todo 修改为你要存放的路径
     data_set_split(src_data_folder, target_data_folder)
