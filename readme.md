@@ -6,7 +6,7 @@ hello，大家好，这里是dejahu，你也可以叫我肆十二，这里是果
 
 csdn教程：[手把手教你用tensorflow2.3训练自己的分类数据集_dejavu的博客-CSDN博客](https://blog.csdn.net/ECHOSON/article/details/117964477)
 
-B站视频：等待更新
+B站视频：[手把手教你用tensorflow2训练自己的数据集](https://www.bilibili.com/video/BV1rX4y1A7N8)
 
 数据集：[计算机视觉数据集清单-附赠tensorflow模型训练和使用教程_dejavu的博客-CSDN博客](https://blog.csdn.net/ECHOSON/article/details/117964438)
 
